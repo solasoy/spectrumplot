@@ -4,9 +4,10 @@ library(pracma)
 library(ggplot2)
 library(reshape2)
 library(plotly)
+library(DBI)
 
 
-#hey
+#hey2
 
 con <- dbConnect(odbc::odbc(), Driver = "SQL Server", Server = "atx-chemometrics-data.database.windows.net", 
                  Database = "chemometrics-lsx3k-model-repo", 
@@ -44,4 +45,4 @@ for (j in 2:n){
                            name = dataset$SampleId[j], mode = 'lines')
       
 }
-p
+ggplotly(p)
